@@ -581,6 +581,15 @@
     .projects-grid .project-card--wide {
       grid-column: 1 / -1;
     }
+    .project-card--wide .project-info {
+      display: flex;
+      flex-direction: column;
+      max-width: none;
+    }
+    .project-card--wide .project-logline,
+    .project-card--wide .project-director {
+      max-width: 720px;
+    }
 
     .project-card {
       position: relative;
@@ -653,32 +662,32 @@
     .project-card:hover .project-overlay { opacity: 1; }
 
     .project-info {
-      padding: 20px 4px 0;
+      padding: 20px 16px 24px;
     }
 
     .project-meta {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .project-year {
-      font-size: 10px;
+      font-size: 13px;
       letter-spacing: 0.2em;
       color: var(--red-light);
     }
 
     .project-role {
-      font-size: 10px;
+      font-size: 13px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--gray);
+      color: var(--white-dim);
     }
 
     .project-title {
       font-family: var(--serif);
-      font-size: clamp(20px, 2.5vw, 28px);
+      font-size: clamp(22px, 2.8vw, 32px);
       font-weight: 400;
       color: var(--white);
       line-height: 1.2;
@@ -687,12 +696,20 @@
     .project-card:hover .project-title { color: var(--white-dim); }
 
     .project-logline {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 300;
-      color: var(--gray);
-      margin-top: 6px;
+      color: var(--white-dim);
+      margin-top: 8px;
       line-height: 1.6;
       max-width: 380px;
+    }
+    .project-director {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--white-dim);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
     }
 
     /* ─── Red Divider ──────────────────────────────────── */
@@ -1153,7 +1170,7 @@
             <div class="nav-dropdown-inner">
               <a href="#work-directing">Directing</a>
               <a href="#work-writing">Writing</a>
-              <a href="#work-production">Art Direction</a>
+              <a href="#work-production">Art Department</a>
             </div>
           </div>
         </li>
@@ -1229,7 +1246,7 @@
     <div class="projects-header">
       <div>
         <p class="section-label reveal">Selected Works</p>
-        <h2 class="projects-title reveal reveal-delay-1">Directing, Writing, &amp; Art Direction</h2>
+        <h2 class="projects-title reveal reveal-delay-1">Directing, Writing, &amp; Art Department</h2>
       </div>
     </div>
 
@@ -1242,16 +1259,18 @@
         <article class="project-card project-card--wide project-card--grad-1">
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
-            <div class="project-meta"><span class="project-year">2024</span><span class="project-role">Director · Writer</span></div>
-            <h3 class="project-title">The Hollow Season</h3>
-            <p class="project-logline">A woman returns to her childhood home after ten years of silence and finds the past hasn't finished speaking.</p>
+            <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
+            <h3 class="project-title">Mrs. Morgan</h3>
+            <p class="project-director">Written and Directed by Salem Rabley</p>
+            <p class="project-logline">Inspired by a true story, Mrs. Morgan centers around an international plane crash that forces two siblings to face the sudden loss of their mother and the legacies they choose to carry forward. This 15 minute NYU thesis film explores grief, mortality, and generational bonds.</p>
           </div>
         </article>
         <article class="project-card project-card--grad-2">
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
-            <div class="project-meta"><span class="project-year">2023</span><span class="project-role">Director</span></div>
-            <h3 class="project-title">Meridian</h3>
+            <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
+            <h3 class="project-title">Walk Me Down</h3>
+            <p class="project-director">Written and Directed by Salem Rabley</p>
             <p class="project-logline">A cartographer loses the line between the maps he draws and the world they describe.</p>
           </div>
         </article>
@@ -1259,8 +1278,36 @@
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2019</span><span class="project-role">Director · Writer</span></div>
-            <h3 class="project-title">A Glass of Night</h3>
+            <h3 class="project-title">It's Fine</h3>
+            <p class="project-director">Written and Directed by Salem Rabley</p>
             <p class="project-logline">Short. A jazz musician plays his last set knowing no one is listening.</p>
+          </div>
+        </article>
+        <article class="project-card project-card--grad-4">
+          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-year">2024</span><span class="project-role">Director · Writer</span></div>
+            <h3 class="project-title">MEAT</h3>
+            <p class="project-director">Written and Directed by Salem Rabley</p>
+            <p class="project-logline">[Logline]</p>
+          </div>
+        </article>
+        <article class="project-card project-card--grad-5">
+          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-year">2024</span><span class="project-role">Director · Writer</span></div>
+            <h3 class="project-title">Fake Name 1</h3>
+            <p class="project-director">Written and Directed by Salem Rabley</p>
+            <p class="project-logline">[Logline]</p>
+          </div>
+        </article>
+        <article class="project-card project-card--grad-6">
+          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-year">2024</span><span class="project-role">Director · Writer</span></div>
+            <h3 class="project-title">Fake Name 2</h3>
+            <p class="project-director">Written and Directed by Salem Rabley</p>
+            <p class="project-logline">[Logline]</p>
           </div>
         </article>
       </div>
@@ -1275,8 +1322,9 @@
         <article class="project-card project-card--grad-4">
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
-            <div class="project-meta"><span class="project-year">2022</span><span class="project-role">Writer · Director</span></div>
+            <div class="project-meta"><span class="project-year">2022</span><span class="project-role">Writer</span></div>
             <h3 class="project-title">Sable</h3>
+            <p class="project-director">Written by Salem Rabley</p>
             <p class="project-logline">Short. A grief portrait in four acts.</p>
           </div>
         </article>
@@ -1285,6 +1333,7 @@
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2021</span><span class="project-role">Writer</span></div>
             <h3 class="project-title">Before the Flood</h3>
+            <p class="project-director">Written by Salem Rabley</p>
             <p class="project-logline">Two estranged brothers race a hurricane home — but neither one knows why.</p>
           </div>
         </article>
@@ -1294,32 +1343,34 @@
     <!-- ── Production Design ── -->
     <div class="work-category reveal" id="work-production">
       <div class="work-category-header">
-                <span class="work-category-title">Art Direction</span>
+                <span class="work-category-title">Art Department</span>
       </div>
       <div class="projects-grid">
         <article class="project-card project-card--grad-6">
           <div class="project-img">
             <div class="project-img-inner">
               <div class="project-slideshow">
-                <img src="assets/growingagirlfriend/growingagirlfriend_1.png" alt="Growing A Girlfriend" />
-                <img src="assets/growingagirlfriend/growingagirlfriend_2.png" alt="Growing A Girlfriend" />
-                <img src="assets/growingagirlfriend/growingagirlfriend_3.png" alt="Growing A Girlfriend" />
-                <img src="assets/growingagirlfriend/growingagirlfriend_4.png" alt="Growing A Girlfriend" />
+                <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend" />
+                <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend" />
+                <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend" />
+                <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend" />
               </div>
             </div>
             <div class="project-overlay"></div>
           </div>
           <div class="project-info">
-            <div class="project-meta"><span class="project-year">2023</span><span class="project-role">Art Director</span></div>
+            <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Art Director</span></div>
             <h3 class="project-title">Growing A Girlfriend</h3>
-            <p class="project-logline">A liminal space between arrival and departure — an airport film told entirely in production language.</p>
+            <p class="project-director">Directed by Nicolo Lucente</p>
+            <p class="project-logline">A lonely scientist creates his perfect, fully obedient woman only to discover that manufactured love lacks the authenticity and comfort he craves.</p>
           </div>
         </article>
         <article class="project-card project-card--grad-1">
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
-            <div class="project-meta"><span class="project-year">2020</span><span class="project-role">Production Designer</span></div>
-            <h3 class="project-title">The Understory</h3>
+            <div class="project-meta"><span class="project-year">2025</span><span class="project-role">Production Designer</span></div>
+            <h3 class="project-title">Sick</h3>
+            <p class="project-director">Directed by Jane Curley</p>
             <p class="project-logline">Short. A forest cabin set built to hold the weight of a decade of grief.</p>
           </div>
         </article>
