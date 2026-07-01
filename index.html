@@ -970,6 +970,69 @@
       background: var(--red);
     }
 
+    /* ─── Hamburger ────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      position: relative;
+      z-index: 1;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(9,9,9,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--sans);
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--white); }
+
+    .mobile-menu-social {
+      display: flex;
+      gap: 28px;
+      margin-top: 16px;
+      border-top: 1px solid var(--gray-light);
+      padding-top: 32px;
+    }
+    .mobile-menu-social a {
+      font-size: 0;
+      color: var(--white-dim);
+    }
+    .mobile-menu-social svg {
+      width: 20px; height: 20px;
+      fill: currentColor;
+    }
+
     /* ─── Responsive ───────────────────────────────────── */
     @media (max-width: 1024px) {
       nav { padding: 24px 32px; }
@@ -981,50 +1044,79 @@
       footer { padding: 32px 40px; }
 
       .about-grid { gap: 60px; }
-
-      .project-card:nth-child(1) { grid-column: 1 / 13; }
-      .project-card:nth-child(2) { grid-column: 1 / 7; }
-      .project-card:nth-child(3) { grid-column: 7 / 13; }
-      .project-card:nth-child(4) { grid-column: 1 / 7; }
-      .project-card:nth-child(5) { grid-column: 7 / 13; }
     }
 
     @media (max-width: 768px) {
-      nav { padding: 20px 24px; }
-      .nav-links { gap: 24px; }
-      .nav-links li:not(:last-child) { display: none; }
+      nav { padding: 20px 24px; animation-delay: 0.3s; }
 
+      .nav-right { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-content { transform: translateY(-8vh); }
+
+      .reel { padding: 80px 0 0; }
       .reel-header {
         flex-direction: column;
         align-items: flex-start;
         padding: 0 24px;
-        gap: 16px;
+        gap: 12px;
       }
-      .reel-sub { text-align: left; }
+      .reel-sub { text-align: left; max-width: 100%; }
 
       .projects { padding: 80px 24px; }
-      .projects-grid { grid-template-columns: 1fr; gap: 48px; }
-      .project-card:nth-child(n) { grid-column: 1 / 2; }
+      .projects-grid { grid-template-columns: 1fr; gap: 40px; }
+      .project-card--wide { grid-column: 1 / -1; }
+      .project-card--wide .project-img { aspect-ratio: 16 / 9; }
+      .work-category { margin-bottom: 64px; }
+      .work-category-header { gap: 12px; }
 
       .about { padding: 80px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-right { padding-top: 0; }
+      .about-gallery { gap: 6px; }
+      .about-details { gap: 32px; }
 
       .contact { padding: 80px 24px; grid-template-columns: 1fr; gap: 48px; }
       footer { padding: 28px 24px; flex-wrap: wrap; gap: 16px; }
     }
 
     @media (max-width: 480px) {
-      .nav-logo { font-size: 14px; }
-      .about-details { flex-direction: column; gap: 32px; }
+      .nav-logo { font-size: 18px; }
+      .about-details { flex-direction: column; gap: 24px; }
+      .form-submit { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 </head>
 <body>
 
   <!-- ── Navigation ─────────────────────────────────────── -->
+  <!-- ── Mobile Menu ──────────────────────────────────────── -->
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="#reel" class="mobile-menu-link">Reel</a>
+    <a href="#work" class="mobile-menu-link">Work</a>
+    <a href="#about" class="mobile-menu-link">About</a>
+    <a href="#contact" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-social">
+      <a href="https://instagram.com/salemrabley" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://youtube.com/@salemrabley" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://vimeo.com/salemrabley" target="_blank" rel="noopener" aria-label="Vimeo">
+        <svg viewBox="0 0 24 24"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.371-8.272 6.371-1.399 0-2.581-1.295-3.544-3.882L5.332 12.58C4.7 9.993 4.023 8.698 3.298 8.698c-.155 0-.7.328-1.634.98L.686 8.458c1.027-.903 2.04-1.806 3.035-2.709C5.0 4.695 6.026 4.099 6.69 4.04c1.607-.154 2.597.945 2.972 3.292.402 2.553.681 4.141.837 4.763.463 2.105.975 3.154 1.532 3.154.434 0 1.09-.685 1.963-2.057.872-1.371 1.34-2.415 1.402-3.13.124-1.185-.342-1.777-1.402-1.777-.498 0-1.012.115-1.541.344 1.023-3.35 2.977-4.977 5.862-4.884 2.14.06 3.148 1.45 3.02 4.171z"/></svg>
+      </a>
+      <a href="https://facebook.com/salemrabley" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+
   <nav aria-label="Main navigation">
     <a href="#" class="nav-logo">Salem Rabley</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#reel">Reel</a></li>
@@ -1348,6 +1440,26 @@
           nav.style.background = '';
         }
       }, { passive: true });
+
+      /* Hamburger menu */
+      var hamburger = document.getElementById('nav-hamburger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          var open = mobileMenu.classList.toggle('open');
+          hamburger.classList.toggle('open', open);
+          hamburger.setAttribute('aria-expanded', open);
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+      }
 
       /* Update footer year */
       var copy = document.querySelector('.footer-copy');
