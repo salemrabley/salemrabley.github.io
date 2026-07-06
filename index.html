@@ -664,6 +664,28 @@
       100%  { opacity: 0; }
     }
 
+    /* 13-image slideshow (39s cycle, 3s per image) */
+    .project-slideshow.slides-13 img:nth-child(1)  { animation: slideFade13 39s 0s infinite; }
+    .project-slideshow.slides-13 img:nth-child(2)  { animation: slideFade13 39s 3s infinite; }
+    .project-slideshow.slides-13 img:nth-child(3)  { animation: slideFade13 39s 6s infinite; }
+    .project-slideshow.slides-13 img:nth-child(4)  { animation: slideFade13 39s 9s infinite; }
+    .project-slideshow.slides-13 img:nth-child(5)  { animation: slideFade13 39s 12s infinite; }
+    .project-slideshow.slides-13 img:nth-child(6)  { animation: slideFade13 39s 15s infinite; }
+    .project-slideshow.slides-13 img:nth-child(7)  { animation: slideFade13 39s 18s infinite; }
+    .project-slideshow.slides-13 img:nth-child(8)  { animation: slideFade13 39s 21s infinite; }
+    .project-slideshow.slides-13 img:nth-child(9)  { animation: slideFade13 39s 24s infinite; }
+    .project-slideshow.slides-13 img:nth-child(10) { animation: slideFade13 39s 27s infinite; }
+    .project-slideshow.slides-13 img:nth-child(11) { animation: slideFade13 39s 30s infinite; }
+    .project-slideshow.slides-13 img:nth-child(12) { animation: slideFade13 39s 33s infinite; }
+    .project-slideshow.slides-13 img:nth-child(13) { animation: slideFade13 39s 36s infinite; }
+    @keyframes slideFade13 {
+      0%    { opacity: 0; }
+      3%    { opacity: 1; }
+      7.7%  { opacity: 1; }
+      10.7% { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+
     .project-card:hover .project-img-inner { transform: scale(1.04); }
 
     .project-overlay {
@@ -1155,7 +1177,7 @@
     <a href="#about" class="mobile-menu-link">About</a>
     <a href="#contact" class="mobile-menu-link">Contact</a>
     <div class="mobile-menu-social">
-      <a href="https://instagram.com/salemrabley" target="_blank" rel="noopener" aria-label="Instagram">
+      <a href="https://www.instagram.com/salem_rabley" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       </a>
       <a href="https://youtube.com/@salemrabley" target="_blank" rel="noopener" aria-label="YouTube">
@@ -1194,7 +1216,7 @@
 
       <div class="nav-social">
         <!-- [ASSET] Update hrefs with real profile URLs -->
-        <a href="https://instagram.com/salemrabley" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://www.instagram.com/salem_rabley" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
         <a href="https://youtube.com/@salemrabley" target="_blank" rel="noopener" aria-label="YouTube">
@@ -1288,13 +1310,32 @@
             <p class="project-logline">A cartographer loses the line between the maps he draws and the world they describe.</p>
           </div>
         </article>
-        <article class="project-card project-card--grad-3">
-          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+        <article class="project-card project-card--grad-3" style="cursor:pointer;" onclick="window.location='its-fine.html'">
+          <div class="project-img">
+            <div class="project-img-inner">
+              <div class="project-slideshow slides-13">
+                <img src="assets/itsfine/itsfine_01.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_02.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_03.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_04.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_05.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_06.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_07.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_08.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_09.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_10.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_11.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine_12.JPEG" alt="It's Fine" />
+                <img src="assets/itsfine/itsfine13.JPEG" alt="It's Fine" />
+              </div>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
             <h3 class="project-title">It's Fine</h3>
             <p class="project-director">Written and Directed by Salem Rabley</p>
-            <p class="project-logline">Short. A jazz musician plays his last set knowing no one is listening.</p>
+            <p class="project-logline">Suffering from the sudden sexual abuse of her step-dad, a teenage girl, Judy, must decide whether to expose him to her mother or just stay quiet.</p>
           </div>
         </article>
         <article class="project-card project-card--grad-4">
@@ -1379,7 +1420,7 @@
             <p class="project-logline">A lonely scientist creates his perfect, fully obedient woman only to discover that manufactured love lacks the authenticity and comfort he craves.</p>
           </div>
         </article>
-        <article class="project-card project-card--grad-1">
+        <article class="project-card project-card--grad-1" style="cursor:pointer;" onclick="window.location='sick.html'">
           <div class="project-img">
             <div class="project-img-inner">
               <div class="project-slideshow slides-5">
@@ -1396,7 +1437,7 @@
             <div class="project-meta"><span class="project-year">2025</span><span class="project-role">Production Designer</span></div>
             <h3 class="project-title">Sick</h3>
             <p class="project-director">Directed by Jane Curley</p>
-            <p class="project-logline">Short. A forest cabin set built to hold the weight of a decade of grief.</p>
+            <p class="project-logline">In the wake of her close friend's death, Francis develops a bizarre obsession with getting sick.</p>
           </div>
         </article>
       </div>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Growing A Girlfriend — Salem Rabley</title>
-  <meta name="description" content="Growing A Girlfriend — Art Direction by Salem Rabley. Directed by Nicolo Lucente." />
+  <title>It's Fine — Salem Rabley</title>
+  <meta name="description" content="It's Fine — Written and Directed by Salem Rabley." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -121,20 +121,6 @@
     }
     .nav-links a:hover { color: var(--white); }
 
-    .nav-back {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--sans);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--white-dim);
-      transition: color 0.3s;
-    }
-    .nav-back:hover { color: var(--white); }
-    .nav-back svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
-
     .nav-social {
       display: flex;
       align-items: center;
@@ -218,16 +204,26 @@
       object-fit: cover;
       opacity: 0;
     }
-    .film-hero-slides img:nth-child(1) { animation: heroFade 15s 0s infinite; }
-    .film-hero-slides img:nth-child(2) { animation: heroFade 15s 3.75s infinite; }
-    .film-hero-slides img:nth-child(3) { animation: heroFade 15s 7.5s infinite; }
-    .film-hero-slides img:nth-child(4) { animation: heroFade 15s 11.25s infinite; }
+    /* 13 images, 3s each = 39s cycle */
+    .film-hero-slides img:nth-child(1)  { animation: heroFade 39s 0s infinite; }
+    .film-hero-slides img:nth-child(2)  { animation: heroFade 39s 3s infinite; }
+    .film-hero-slides img:nth-child(3)  { animation: heroFade 39s 6s infinite; }
+    .film-hero-slides img:nth-child(4)  { animation: heroFade 39s 9s infinite; }
+    .film-hero-slides img:nth-child(5)  { animation: heroFade 39s 12s infinite; }
+    .film-hero-slides img:nth-child(6)  { animation: heroFade 39s 15s infinite; }
+    .film-hero-slides img:nth-child(7)  { animation: heroFade 39s 18s infinite; }
+    .film-hero-slides img:nth-child(8)  { animation: heroFade 39s 21s infinite; }
+    .film-hero-slides img:nth-child(9)  { animation: heroFade 39s 24s infinite; }
+    .film-hero-slides img:nth-child(10) { animation: heroFade 39s 27s infinite; }
+    .film-hero-slides img:nth-child(11) { animation: heroFade 39s 30s infinite; }
+    .film-hero-slides img:nth-child(12) { animation: heroFade 39s 33s infinite; }
+    .film-hero-slides img:nth-child(13) { animation: heroFade 39s 36s infinite; }
     @keyframes heroFade {
-      0%   { opacity: 0; }
-      5%   { opacity: 1; }
-      25%  { opacity: 1; }
-      30%  { opacity: 0; }
-      100% { opacity: 0; }
+      0%    { opacity: 0; }
+      3%    { opacity: 1; }
+      7.7%  { opacity: 1; }
+      10.7% { opacity: 0; }
+      100%  { opacity: 0; }
     }
 
     .film-hero-overlay {
@@ -265,7 +261,7 @@
 
     .film-hero-title {
       font-family: var(--serif);
-      font-size: clamp(52px, 8vw, 110px);
+      font-size: clamp(72px, 12vw, 140px);
       font-weight: 400;
       line-height: 0.95;
       color: var(--white);
@@ -289,7 +285,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── Film Info ───────────────────────────────────────── */
+    /* ─── Film Body ───────────────────────────────────────── */
     .film-body {
       max-width: 1200px;
       margin: 0 auto;
@@ -303,7 +299,6 @@
       align-items: start;
     }
 
-    /* Left column: metadata */
     .film-meta-col {
       position: sticky;
       top: 120px;
@@ -330,19 +325,12 @@
       line-height: 1.4;
     }
 
-    .film-meta-value.large {
-      font-size: 28px;
-    }
-
     .red-rule {
       width: 40px;
       height: 1px;
       background: var(--red);
       margin-bottom: 40px;
     }
-
-    /* Right column: description + stills */
-    .film-detail-col {}
 
     .film-synopsis-label {
       font-family: var(--sans);
@@ -393,7 +381,6 @@
       width: 100%;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--red-muted), transparent);
-      margin: 0;
     }
 
     /* ─── Footer ──────────────────────────────────────────── */
@@ -498,18 +485,27 @@
   </nav>
 
   <!-- ── Hero ───────────────────────────────────────────── -->
-  <section class="film-hero" aria-label="Growing A Girlfriend hero">
+  <section class="film-hero" aria-label="It's Fine hero">
     <div class="film-hero-slides">
-      <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend still" />
-      <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend still" />
-      <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend still" />
-      <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend still" />
+      <img src="assets/itsfine/itsfine_01.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_02.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_03.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_04.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_05.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_06.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_07.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_08.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_09.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_10.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_11.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine_12.JPEG" alt="It's Fine still" />
+      <img src="assets/itsfine/itsfine13.JPEG" alt="It's Fine still" />
     </div>
     <div class="film-hero-overlay"></div>
     <div class="film-hero-content">
-      <p class="film-hero-label">Art Department &nbsp;·&nbsp; 2026</p>
-      <h1 class="film-hero-title">Growing A<br/>Girlfriend</h1>
-      <p class="film-hero-director">Directed by Nicolo Lucente</p>
+      <p class="film-hero-label">Directing &nbsp;·&nbsp; 2026</p>
+      <h1 class="film-hero-title">It's Fine</h1>
+      <p class="film-hero-director">Written and Directed by Salem Rabley</p>
     </div>
   </section>
 
@@ -523,12 +519,12 @@
 
         <div class="film-meta-item">
           <p class="film-meta-label">Role</p>
-          <p class="film-meta-value">Art Director</p>
+          <p class="film-meta-value">Director · Writer</p>
         </div>
 
         <div class="film-meta-item">
           <p class="film-meta-label">Director</p>
-          <p class="film-meta-value">Nicolo Lucente</p>
+          <p class="film-meta-value">Salem Rabley</p>
         </div>
 
         <div class="film-meta-item">
@@ -542,26 +538,57 @@
         </div>
       </aside>
 
-      <!-- Right: synopsis + stills -->
+      <!-- Right: logline + stills -->
       <div class="film-detail-col">
-        <p class="film-synopsis-label reveal">Logline</p>
+        <p class="film-synopsis-label reveal">Synopsis</p>
         <p class="film-synopsis reveal reveal-delay-1">
-          A lonely scientist creates his perfect, fully obedient woman only to discover that manufactured love lacks the authenticity and comfort he craves.
+          Judy, a seventeen year old girl, wakes up after a strange dream like state, sore and naked on her living room floor. She tries to get up before her step-dad stops her. In shock, Judy must figure out how to recover. After a long bath and some time alone, she must endure a family dinner with her step-dad and mother that same night. Quiet and despondent, Judy grapples with her trauma while trying to determine whether to overcome her fear of her step-dad and confide in her mother or whether to suffer in silence.
         </p>
 
-        <!-- Stills -->
+        <p class="film-synopsis-label reveal" style="margin-top: 48px;">Director's Statement</p>
+        <p class="film-synopsis reveal reveal-delay-1">
+          RAINN, the nation's largest anti-sexual violence organization claims in a 2018 study that in the United States of America, every 9 minutes, child protective services substantiates, or finds evidence for, a claim of sexual abuse. These statistics are upsetting and shocking, and they only refer to the cases that the government knows about. What about the cases that are never reported/investigated? Why aren't more people talking about this? Several years ago, a friend of mine was brave enough to share their story of familial sexual assault and the impact it has had on their life. After hearing their stories, I was overcome by emotion and deep sadness by the horrors of what they had experienced. What I was stunned most by was the fact that they kept the abuse a secret for so long. I couldn't help but ponder why they wouldn't tell anyone and what that experience must have been like. IT'S FINE is a story of power, what it is like to have your agency ripped away from you and how one young woman copes in the face of these complex issues. With this film I hope to demonstrate the emotional complexities regarding sexual abuse and educate people on real life circumstances that people deal with every day.
+        </p>
+
         <div class="film-stills reveal reveal-delay-2">
           <div class="film-still film-still--wide">
-            <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/itsfine/itsfine_01.JPEG" alt="It's Fine still" />
           </div>
           <div class="film-still">
-            <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/itsfine/itsfine_02.JPEG" alt="It's Fine still" />
           </div>
           <div class="film-still">
-            <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/itsfine/itsfine_03.JPEG" alt="It's Fine still" />
           </div>
           <div class="film-still film-still--wide">
-            <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/itsfine/itsfine_04.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/itsfine/itsfine_05.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/itsfine/itsfine_06.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still film-still--wide">
+            <img src="assets/itsfine/itsfine_07.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/itsfine/itsfine_08.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/itsfine/itsfine_09.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still film-still--wide">
+            <img src="assets/itsfine/itsfine_10.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/itsfine/itsfine_11.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/itsfine/itsfine_12.JPEG" alt="It's Fine still" />
+          </div>
+          <div class="film-still film-still--wide">
+            <img src="assets/itsfine/itsfine13.JPEG" alt="It's Fine still" />
           </div>
         </div>
       </div>
@@ -582,7 +609,6 @@
 
   <script>
     (function () {
-      /* Scroll reveal */
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
@@ -595,7 +621,6 @@
         observer.observe(el);
       });
 
-      /* Nav: shrink on scroll */
       var nav = document.querySelector('nav');
       window.addEventListener('scroll', function () {
         if (window.scrollY > 80) {
@@ -609,7 +634,6 @@
         }
       }, { passive: true });
 
-      /* Hamburger */
       var hamburger = document.getElementById('nav-hamburger');
       var mobileMenu = document.getElementById('mobile-menu');
       if (hamburger && mobileMenu) {

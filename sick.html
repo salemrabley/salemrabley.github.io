@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Growing A Girlfriend — Salem Rabley</title>
-  <meta name="description" content="Growing A Girlfriend — Art Direction by Salem Rabley. Directed by Nicolo Lucente." />
+  <title>Sick — Salem Rabley</title>
+  <meta name="description" content="Sick — Production Design by Salem Rabley. Directed by Jane Curley." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -121,20 +121,6 @@
     }
     .nav-links a:hover { color: var(--white); }
 
-    .nav-back {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--sans);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--white-dim);
-      transition: color 0.3s;
-    }
-    .nav-back:hover { color: var(--white); }
-    .nav-back svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
-
     .nav-social {
       display: flex;
       align-items: center;
@@ -218,15 +204,16 @@
       object-fit: cover;
       opacity: 0;
     }
-    .film-hero-slides img:nth-child(1) { animation: heroFade 15s 0s infinite; }
-    .film-hero-slides img:nth-child(2) { animation: heroFade 15s 3.75s infinite; }
-    .film-hero-slides img:nth-child(3) { animation: heroFade 15s 7.5s infinite; }
-    .film-hero-slides img:nth-child(4) { animation: heroFade 15s 11.25s infinite; }
+    .film-hero-slides img:nth-child(1) { animation: heroFade 18.75s 0s infinite; }
+    .film-hero-slides img:nth-child(2) { animation: heroFade 18.75s 3.75s infinite; }
+    .film-hero-slides img:nth-child(3) { animation: heroFade 18.75s 7.5s infinite; }
+    .film-hero-slides img:nth-child(4) { animation: heroFade 18.75s 11.25s infinite; }
+    .film-hero-slides img:nth-child(5) { animation: heroFade 18.75s 15s infinite; }
     @keyframes heroFade {
       0%   { opacity: 0; }
       5%   { opacity: 1; }
-      25%  { opacity: 1; }
-      30%  { opacity: 0; }
+      21%  { opacity: 1; }
+      26%  { opacity: 0; }
       100% { opacity: 0; }
     }
 
@@ -265,7 +252,7 @@
 
     .film-hero-title {
       font-family: var(--serif);
-      font-size: clamp(52px, 8vw, 110px);
+      font-size: clamp(72px, 12vw, 140px);
       font-weight: 400;
       line-height: 0.95;
       color: var(--white);
@@ -289,7 +276,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── Film Info ───────────────────────────────────────── */
+    /* ─── Film Body ───────────────────────────────────────── */
     .film-body {
       max-width: 1200px;
       margin: 0 auto;
@@ -303,7 +290,6 @@
       align-items: start;
     }
 
-    /* Left column: metadata */
     .film-meta-col {
       position: sticky;
       top: 120px;
@@ -330,19 +316,12 @@
       line-height: 1.4;
     }
 
-    .film-meta-value.large {
-      font-size: 28px;
-    }
-
     .red-rule {
       width: 40px;
       height: 1px;
       background: var(--red);
       margin-bottom: 40px;
     }
-
-    /* Right column: description + stills */
-    .film-detail-col {}
 
     .film-synopsis-label {
       font-family: var(--sans);
@@ -393,7 +372,6 @@
       width: 100%;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--red-muted), transparent);
-      margin: 0;
     }
 
     /* ─── Footer ──────────────────────────────────────────── */
@@ -498,18 +476,19 @@
   </nav>
 
   <!-- ── Hero ───────────────────────────────────────────── -->
-  <section class="film-hero" aria-label="Growing A Girlfriend hero">
+  <section class="film-hero" aria-label="Sick hero">
     <div class="film-hero-slides">
-      <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend still" />
-      <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend still" />
-      <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend still" />
-      <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend still" />
+      <img src="assets/sick/sick_1.png" alt="Sick still" />
+      <img src="assets/sick/sick_2.png" alt="Sick still" />
+      <img src="assets/sick/sick_3.png" alt="Sick still" />
+      <img src="assets/sick/sick_4.png" alt="Sick still" />
+      <img src="assets/sick/sick_5.png" alt="Sick still" />
     </div>
     <div class="film-hero-overlay"></div>
     <div class="film-hero-content">
-      <p class="film-hero-label">Art Department &nbsp;·&nbsp; 2026</p>
-      <h1 class="film-hero-title">Growing A<br/>Girlfriend</h1>
-      <p class="film-hero-director">Directed by Nicolo Lucente</p>
+      <p class="film-hero-label">Art Department &nbsp;·&nbsp; 2025</p>
+      <h1 class="film-hero-title">Sick</h1>
+      <p class="film-hero-director">Directed by Jane Curley</p>
     </div>
   </section>
 
@@ -523,17 +502,17 @@
 
         <div class="film-meta-item">
           <p class="film-meta-label">Role</p>
-          <p class="film-meta-value">Art Director</p>
+          <p class="film-meta-value">Production Designer</p>
         </div>
 
         <div class="film-meta-item">
           <p class="film-meta-label">Director</p>
-          <p class="film-meta-value">Nicolo Lucente</p>
+          <p class="film-meta-value">Jane Curley</p>
         </div>
 
         <div class="film-meta-item">
           <p class="film-meta-label">Year</p>
-          <p class="film-meta-value">2026</p>
+          <p class="film-meta-value">2025</p>
         </div>
 
         <div class="film-meta-item">
@@ -542,26 +521,28 @@
         </div>
       </aside>
 
-      <!-- Right: synopsis + stills -->
+      <!-- Right: logline + stills -->
       <div class="film-detail-col">
         <p class="film-synopsis-label reveal">Logline</p>
         <p class="film-synopsis reveal reveal-delay-1">
-          A lonely scientist creates his perfect, fully obedient woman only to discover that manufactured love lacks the authenticity and comfort he craves.
+          In the wake of her close friend's death, Francis develops a bizarre obsession with getting sick.
         </p>
 
-        <!-- Stills -->
         <div class="film-stills reveal reveal-delay-2">
           <div class="film-still film-still--wide">
-            <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/sick/sick_1.png" alt="Sick still" />
           </div>
           <div class="film-still">
-            <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/sick/sick_2.png" alt="Sick still" />
           </div>
           <div class="film-still">
-            <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/sick/sick_3.png" alt="Sick still" />
           </div>
           <div class="film-still film-still--wide">
-            <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend still" />
+            <img src="assets/sick/sick_4.png" alt="Sick still" />
+          </div>
+          <div class="film-still film-still--wide">
+            <img src="assets/sick/sick_5.png" alt="Sick still" />
           </div>
         </div>
       </div>
@@ -582,7 +563,6 @@
 
   <script>
     (function () {
-      /* Scroll reveal */
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
@@ -595,7 +575,6 @@
         observer.observe(el);
       });
 
-      /* Nav: shrink on scroll */
       var nav = document.querySelector('nav');
       window.addEventListener('scroll', function () {
         if (window.scrollY > 80) {
@@ -609,7 +588,6 @@
         }
       }, { passive: true });
 
-      /* Hamburger */
       var hamburger = document.getElementById('nav-hamburger');
       var mobileMenu = document.getElementById('mobile-menu');
       if (hamburger && mobileMenu) {
