@@ -638,15 +638,29 @@
       opacity: 0;
       transition: none;
     }
-    .project-slideshow img:nth-child(1) { animation: slideFade 12s 0s infinite; }
-    .project-slideshow img:nth-child(2) { animation: slideFade 12s 3s infinite; }
-    .project-slideshow img:nth-child(3) { animation: slideFade 12s 6s infinite; }
-    .project-slideshow img:nth-child(4) { animation: slideFade 12s 9s infinite; }
-    @keyframes slideFade {
+    /* 4-image slideshow (12s cycle, 3s per image) */
+    .project-slideshow.slides-4 img:nth-child(1) { animation: slideFade4 12s 0s infinite; }
+    .project-slideshow.slides-4 img:nth-child(2) { animation: slideFade4 12s 3s infinite; }
+    .project-slideshow.slides-4 img:nth-child(3) { animation: slideFade4 12s 6s infinite; }
+    .project-slideshow.slides-4 img:nth-child(4) { animation: slideFade4 12s 9s infinite; }
+    @keyframes slideFade4 {
       0%    { opacity: 0; }
       5%    { opacity: 1; }
       25%   { opacity: 1; }
       30%   { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+    /* 5-image slideshow (15s cycle, 3s per image) */
+    .project-slideshow.slides-5 img:nth-child(1) { animation: slideFade5 15s 0s infinite; }
+    .project-slideshow.slides-5 img:nth-child(2) { animation: slideFade5 15s 3s infinite; }
+    .project-slideshow.slides-5 img:nth-child(3) { animation: slideFade5 15s 6s infinite; }
+    .project-slideshow.slides-5 img:nth-child(4) { animation: slideFade5 15s 9s infinite; }
+    .project-slideshow.slides-5 img:nth-child(5) { animation: slideFade5 15s 12s infinite; }
+    @keyframes slideFade5 {
+      0%    { opacity: 0; }
+      4%    { opacity: 1; }
+      20%   { opacity: 1; }
+      24%   { opacity: 0; }
       100%  { opacity: 0; }
     }
 
@@ -1346,10 +1360,10 @@
                 <span class="work-category-title">Art Department</span>
       </div>
       <div class="projects-grid">
-        <article class="project-card project-card--grad-6">
+        <article class="project-card project-card--grad-6" style="cursor:pointer;" onclick="window.location='growing-a-girlfriend.html'">
           <div class="project-img">
             <div class="project-img-inner">
-              <div class="project-slideshow">
+              <div class="project-slideshow slides-4">
                 <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend" />
                 <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend" />
                 <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend" />
@@ -1366,7 +1380,18 @@
           </div>
         </article>
         <article class="project-card project-card--grad-1">
-          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+          <div class="project-img">
+            <div class="project-img-inner">
+              <div class="project-slideshow slides-5">
+                <img src="assets/sick/sick_1.png" alt="Sick" />
+                <img src="assets/sick/sick_2.png" alt="Sick" />
+                <img src="assets/sick/sick_3.png" alt="Sick" />
+                <img src="assets/sick/sick_4.png" alt="Sick" />
+                <img src="assets/sick/sick_5.png" alt="Sick" />
+              </div>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2025</span><span class="project-role">Production Designer</span></div>
             <h3 class="project-title">Sick</h3>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Growing A Girlfriend — Salem Rabley</title>
+  <meta name="description" content="Growing A Girlfriend — Art Direction by Salem Rabley. Directed by Nicolo Lucente." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="assets/salemrabley.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --black:      #090909;
+      --dark:       #121212;
+      --dark-mid:   #1c1c1c;
+      --red:        #b91c1c;
+      --red-light:  #e53e3e;
+      --red-muted:  #5c0e0e;
+      --white:      #f4f0eb;
+      --white-dim:  #c8c2b8;
+      --gray:       #6b6b6b;
+      --gray-light: #3a3a3a;
+
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'DM Sans', system-ui, sans-serif;
+      --display:  'Instrument Sans', system-ui, sans-serif;
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--red); color: var(--white); }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* ─── Reveal ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+
+    /* ─── Nav ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      opacity: 0;
+      animation: navFadeIn 0.8s 0.3s var(--ease-out-expo) forwards;
+    }
+    @keyframes navFadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-logo {
+      font-family: 'Anton', var(--sans);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: color 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+    .nav-logo:hover { color: var(--red-light); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color 0.3s;
+    }
+    .nav-back:hover { color: var(--white); }
+    .nav-back svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-left: 1px solid var(--gray-light);
+      padding-left: 40px;
+    }
+    .nav-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-dim);
+      transition: color 0.3s;
+    }
+    .nav-social a:hover { color: var(--white); }
+    .nav-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* ─── Mobile Menu ─────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 101;
+      position: relative;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(9,9,9,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--white-dim);
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    .mobile-menu-link:hover { color: var(--white); }
+
+    /* ─── Hero ────────────────────────────────────────────── */
+    .film-hero {
+      position: relative;
+      height: 90vh;
+      min-height: 520px;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .film-hero-slides {
+      position: absolute;
+      inset: 0;
+    }
+    .film-hero-slides img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+    }
+    .film-hero-slides img:nth-child(1) { animation: heroFade 15s 0s infinite; }
+    .film-hero-slides img:nth-child(2) { animation: heroFade 15s 3.75s infinite; }
+    .film-hero-slides img:nth-child(3) { animation: heroFade 15s 7.5s infinite; }
+    .film-hero-slides img:nth-child(4) { animation: heroFade 15s 11.25s infinite; }
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      25%  { opacity: 1; }
+      30%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .film-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(9,9,9,0.2) 0%,
+        rgba(9,9,9,0.1) 40%,
+        rgba(9,9,9,0.75) 80%,
+        rgba(9,9,9,1) 100%
+      );
+      z-index: 1;
+    }
+
+    .film-hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 0 80px 64px;
+    }
+
+    .film-hero-label {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUpIn 0.7s 0.5s var(--ease-out-expo) forwards;
+    }
+
+    .film-hero-title {
+      font-family: var(--serif);
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 400;
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      opacity: 0;
+      animation: fadeUpIn 0.9s 0.65s var(--ease-out-expo) forwards;
+    }
+
+    .film-hero-director {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--white-dim);
+      margin-top: 18px;
+      opacity: 0;
+      animation: fadeUpIn 0.7s 0.85s var(--ease-out-expo) forwards;
+    }
+
+    @keyframes fadeUpIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Film Info ───────────────────────────────────────── */
+    .film-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 80px 120px;
+    }
+
+    .film-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Left column: metadata */
+    .film-meta-col {
+      position: sticky;
+      top: 120px;
+    }
+
+    .film-meta-item {
+      margin-bottom: 36px;
+    }
+
+    .film-meta-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 6px;
+    }
+
+    .film-meta-value {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    .film-meta-value.large {
+      font-size: 28px;
+    }
+
+    .red-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--red);
+      margin-bottom: 40px;
+    }
+
+    /* Right column: description + stills */
+    .film-detail-col {}
+
+    .film-synopsis-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .film-synopsis {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 300;
+      color: var(--white-dim);
+      line-height: 1.65;
+      margin-bottom: 60px;
+    }
+
+    /* Stills grid */
+    .film-stills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .film-still {
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background: var(--dark-mid);
+    }
+
+    .film-still img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+    .film-still:hover img { transform: scale(1.04); }
+
+    .film-still--wide {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 7;
+    }
+
+    /* ─── Divider ─────────────────────────────────────────── */
+    .red-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--red-muted), transparent);
+      margin: 0;
+    }
+
+    /* ─── Footer ──────────────────────────────────────────── */
+    footer {
+      padding: 32px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+      transition: color 0.3s;
+    }
+    .footer-back:hover { color: var(--white); }
+    .footer-back svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    /* ─── Mobile ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .film-body { padding: 60px 48px 80px; }
+      .film-grid { gap: 48px; }
+      .film-hero-content { padding: 0 48px 48px; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      .nav-right { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .film-hero { height: 70vh; }
+      .film-hero-content { padding: 0 24px 40px; }
+
+      .film-body { padding: 48px 24px 80px; }
+      .film-grid { grid-template-columns: 1fr; gap: 40px; }
+      .film-meta-col { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .film-meta-item { margin-bottom: 0; }
+
+      .film-stills { grid-template-columns: 1fr; }
+      .film-still--wide { grid-column: 1; aspect-ratio: 3 / 2; }
+
+      footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-logo { font-size: 18px; }
+      .film-meta-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Mobile Menu ─────────────────────────────────────── -->
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-menu-link">Home</a>
+    <a href="index.html#reel" class="mobile-menu-link">Reel</a>
+    <a href="index.html#work" class="mobile-menu-link">Work</a>
+    <a href="index.html#about" class="mobile-menu-link">About</a>
+    <a href="index.html#contact" class="mobile-menu-link">Contact</a>
+  </div>
+
+  <!-- ── Nav ────────────────────────────────────────────── -->
+  <nav aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Salem Rabley</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#reel">Reel</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://instagram.com/salemrabley" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://youtube.com/@salemrabley" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://vimeo.com/salemrabley" target="_blank" rel="noopener" aria-label="Vimeo">
+          <svg viewBox="0 0 24 24"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.371-8.272 6.371-1.399 0-2.581-1.295-3.544-3.882L5.332 12.58C4.7 9.993 4.023 8.698 3.298 8.698c-.155 0-.7.328-1.634.98L.686 8.458c1.027-.903 2.04-1.806 3.035-2.709C5.0 4.695 6.026 4.099 6.69 4.04c1.607-.154 2.597.945 2.972 3.292.402 2.553.681 4.141.837 4.763.463 2.105.975 3.154 1.532 3.154.434 0 1.09-.685 1.963-2.057.872-1.371 1.34-2.415 1.402-3.13.124-1.185-.342-1.777-1.402-1.777-.498 0-1.012.115-1.541.344 1.023-3.35 2.977-4.977 5.862-4.884 2.14.06 3.148 1.45 3.02 4.171z"/></svg>
+        </a>
+        <a href="https://facebook.com/salemrabley" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section class="film-hero" aria-label="Growing A Girlfriend hero">
+    <div class="film-hero-slides">
+      <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend still" />
+      <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend still" />
+      <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend still" />
+      <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend still" />
+    </div>
+    <div class="film-hero-overlay"></div>
+    <div class="film-hero-content">
+      <p class="film-hero-label">Art Department &nbsp;·&nbsp; 2026</p>
+      <h1 class="film-hero-title">Growing A<br/>Girlfriend</h1>
+      <p class="film-hero-director">Directed by Nicolo Lucente</p>
+    </div>
+  </section>
+
+  <!-- ── Film Body ───────────────────────────────────────── -->
+  <div class="film-body">
+    <div class="film-grid">
+
+      <!-- Left: metadata -->
+      <aside class="film-meta-col reveal">
+        <div class="red-rule"></div>
+
+        <div class="film-meta-item">
+          <p class="film-meta-label">Role</p>
+          <p class="film-meta-value">Art Director</p>
+        </div>
+
+        <div class="film-meta-item">
+          <p class="film-meta-label">Director</p>
+          <p class="film-meta-value">Nicolo Lucente</p>
+        </div>
+
+        <div class="film-meta-item">
+          <p class="film-meta-label">Year</p>
+          <p class="film-meta-value">2026</p>
+        </div>
+
+        <div class="film-meta-item">
+          <p class="film-meta-label">Format</p>
+          <p class="film-meta-value">Short Film</p>
+        </div>
+      </aside>
+
+      <!-- Right: synopsis + stills -->
+      <div class="film-detail-col">
+        <p class="film-synopsis-label reveal">Synopsis</p>
+        <p class="film-synopsis reveal reveal-delay-1">
+          A lonely scientist creates his perfect, fully obedient woman only to discover that manufactured love lacks the authenticity and comfort he craves.
+        </p>
+
+        <!-- Stills -->
+        <div class="film-stills reveal reveal-delay-2">
+          <div class="film-still film-still--wide">
+            <img src="assets/growingagirlfriend/growingagirlfriend_1.jpeg" alt="Growing A Girlfriend still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/growingagirlfriend/growingagirlfriend_2.jpeg" alt="Growing A Girlfriend still" />
+          </div>
+          <div class="film-still">
+            <img src="assets/growingagirlfriend/growingagirlfriend_3.jpeg" alt="Growing A Girlfriend still" />
+          </div>
+          <div class="film-still film-still--wide">
+            <img src="assets/growingagirlfriend/gorwingagirlfriend_4.jpeg" alt="Growing A Girlfriend still" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="red-divider" aria-hidden="true"></div>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer>
+    <p class="footer-copy">© 2026 Salem Rabley. All rights reserved.</p>
+    <a href="index.html#work" class="footer-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to work
+    </a>
+  </footer>
+
+  <script>
+    (function () {
+      /* Scroll reveal */
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      /* Nav: shrink on scroll */
+      var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 80) {
+          nav.style.padding = '16px 48px';
+          nav.style.backdropFilter = 'blur(12px)';
+          nav.style.background = 'rgba(9,9,9,0.85)';
+        } else {
+          nav.style.padding = '';
+          nav.style.backdropFilter = '';
+          nav.style.background = '';
+        }
+      }, { passive: true });
+
+      /* Hamburger */
+      var hamburger = document.getElementById('nav-hamburger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function () {
+          var open = mobileMenu.classList.toggle('open');
+          hamburger.classList.toggle('open', open);
+          hamburger.setAttribute('aria-expanded', open);
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
