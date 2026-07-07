@@ -664,6 +664,44 @@
       100%  { opacity: 0; }
     }
 
+    /* 8-image slideshow (24s cycle, 3s per image) */
+    .project-slideshow.slides-8 img:nth-child(1) { animation: slideFade8 24s 0s infinite; }
+    .project-slideshow.slides-8 img:nth-child(2) { animation: slideFade8 24s 3s infinite; }
+    .project-slideshow.slides-8 img:nth-child(3) { animation: slideFade8 24s 6s infinite; }
+    .project-slideshow.slides-8 img:nth-child(4) { animation: slideFade8 24s 9s infinite; }
+    .project-slideshow.slides-8 img:nth-child(5) { animation: slideFade8 24s 12s infinite; }
+    .project-slideshow.slides-8 img:nth-child(6) { animation: slideFade8 24s 15s infinite; }
+    .project-slideshow.slides-8 img:nth-child(7) { animation: slideFade8 24s 18s infinite; }
+    .project-slideshow.slides-8 img:nth-child(8) { animation: slideFade8 24s 21s infinite; }
+    @keyframes slideFade8 {
+      0%    { opacity: 0; }
+      4%    { opacity: 1; }
+      12.5% { opacity: 1; }
+      16.5% { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+
+    /* 12-image slideshow (36s cycle, 3s per image) */
+    .project-slideshow.slides-12 img:nth-child(1)  { animation: slideFade12 36s 0s infinite; }
+    .project-slideshow.slides-12 img:nth-child(2)  { animation: slideFade12 36s 3s infinite; }
+    .project-slideshow.slides-12 img:nth-child(3)  { animation: slideFade12 36s 6s infinite; }
+    .project-slideshow.slides-12 img:nth-child(4)  { animation: slideFade12 36s 9s infinite; }
+    .project-slideshow.slides-12 img:nth-child(5)  { animation: slideFade12 36s 12s infinite; }
+    .project-slideshow.slides-12 img:nth-child(6)  { animation: slideFade12 36s 15s infinite; }
+    .project-slideshow.slides-12 img:nth-child(7)  { animation: slideFade12 36s 18s infinite; }
+    .project-slideshow.slides-12 img:nth-child(8)  { animation: slideFade12 36s 21s infinite; }
+    .project-slideshow.slides-12 img:nth-child(9)  { animation: slideFade12 36s 24s infinite; }
+    .project-slideshow.slides-12 img:nth-child(10) { animation: slideFade12 36s 27s infinite; }
+    .project-slideshow.slides-12 img:nth-child(11) { animation: slideFade12 36s 30s infinite; }
+    .project-slideshow.slides-12 img:nth-child(12) { animation: slideFade12 36s 33s infinite; }
+    @keyframes slideFade12 {
+      0%    { opacity: 0; }
+      3%    { opacity: 1; }
+      8.3%  { opacity: 1; }
+      11.3% { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+
     /* 13-image slideshow (39s cycle, 3s per image) */
     .project-slideshow.slides-13 img:nth-child(1)  { animation: slideFade13 39s 0s infinite; }
     .project-slideshow.slides-13 img:nth-child(2)  { animation: slideFade13 39s 3s infinite; }
@@ -1301,8 +1339,22 @@
             <p class="project-logline">Inspired by a true story, Mrs. Morgan centers around an international plane crash that forces two siblings to face the sudden loss of their mother and the legacies they choose to carry forward. This 15 minute NYU thesis film explores grief, mortality, and generational bonds.</p>
           </div>
         </article>
-        <article class="project-card project-card--grad-2">
-          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+        <article class="project-card project-card--grad-2" style="cursor:pointer;" onclick="window.location='walk-me-down.html'">
+          <div class="project-img">
+            <div class="project-img-inner">
+              <div class="project-slideshow slides-8">
+                <img src="assets/walkmedown/walkmedown_1.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_2.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_3.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_4.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_5.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_6.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_7.JPG" alt="Walk Me Down" />
+                <img src="assets/walkmedown/walkmedown_8.JPG" alt="Walk Me Down" />
+              </div>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
             <h3 class="project-title">Walk Me Down</h3>
@@ -1347,7 +1399,7 @@
             <p class="project-logline">[Logline]</p>
           </div>
         </article>
-        <article class="project-card project-card--grad-5">
+        <article class="project-card project-card--grad-5" style="display:none;">
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
@@ -1356,7 +1408,7 @@
             <p class="project-logline">[Logline]</p>
           </div>
         </article>
-        <article class="project-card project-card--grad-6">
+        <article class="project-card project-card--grad-6" style="display:none;">
           <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
