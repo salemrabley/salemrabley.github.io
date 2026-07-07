@@ -565,9 +565,9 @@
     }
 
     .writing-inquiry {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-style: italic;
-      font-size: clamp(18px, 2vw, 24px);
+      font-size: clamp(16px, 1.6vw, 20px);
       font-weight: 300;
       color: var(--white-dim);
       padding: 32px 0 8px;
@@ -670,6 +670,22 @@
       4%    { opacity: 1; }
       20%   { opacity: 1; }
       24%   { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+
+    /* 7-image slideshow (21s cycle, 3s per image) */
+    .project-slideshow.slides-7 img:nth-child(1) { animation: slideFade7 21s 0s infinite; }
+    .project-slideshow.slides-7 img:nth-child(2) { animation: slideFade7 21s 3s infinite; }
+    .project-slideshow.slides-7 img:nth-child(3) { animation: slideFade7 21s 6s infinite; }
+    .project-slideshow.slides-7 img:nth-child(4) { animation: slideFade7 21s 9s infinite; }
+    .project-slideshow.slides-7 img:nth-child(5) { animation: slideFade7 21s 12s infinite; }
+    .project-slideshow.slides-7 img:nth-child(6) { animation: slideFade7 21s 15s infinite; }
+    .project-slideshow.slides-7 img:nth-child(7) { animation: slideFade7 21s 18s infinite; }
+    @keyframes slideFade7 {
+      0%    { opacity: 0; }
+      4%    { opacity: 1; }
+      14.3% { opacity: 1; }
+      18.3% { opacity: 0; }
       100%  { opacity: 0; }
     }
 
@@ -806,9 +822,9 @@
     }
 
     .project-title {
-      font-family: var(--serif);
+      font-family: var(--display);
       font-size: clamp(22px, 2.8vw, 32px);
-      font-weight: 400;
+      font-weight: 500;
       color: var(--white);
       line-height: 1.2;
       transition: color 0.3s;
@@ -824,12 +840,12 @@
       max-width: 380px;
     }
     .project-director {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-style: italic;
-      font-size: 16px;
+      font-size: 14px;
       color: var(--white-dim);
       margin-top: 4px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
     }
 
     /* ─── Red Divider ──────────────────────────────────── */
@@ -897,8 +913,8 @@
     }
 
     .about-body {
-      font-family: var(--serif);
-      font-size: 19px;
+      font-family: var(--sans);
+      font-size: 17px;
       font-weight: 300;
       line-height: 1.8;
       color: var(--white-dim);
@@ -922,8 +938,8 @@
     }
 
     .about-stat-value {
-      font-family: var(--serif);
-      font-size: 28px;
+      font-family: var(--sans);
+      font-size: 22px;
       font-weight: 300;
       color: var(--white);
     }
@@ -1000,8 +1016,8 @@
       background: transparent;
       border: none;
       outline: none;
-      font-family: var(--serif);
-      font-size: clamp(22px, 2.8vw, 30px);
+      font-family: var(--sans);
+      font-size: clamp(18px, 2.2vw, 24px);
       font-weight: 300;
       color: var(--white);
       padding: 0 0 20px;
@@ -1460,13 +1476,26 @@
             <p class="project-logline">A woman hiding behind the image of perfection secretly feeds an insatiable craving, until an unexpected witness interrupts her.</p>
           </div>
         </article>
-        <article class="project-card project-card--grad-5" style="display:none;">
-          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+        <article class="project-card project-card--grad-5" onclick="window.location='nyc-hardcore-2021.html'" style="cursor:pointer;">
+          <div class="project-img">
+            <div class="project-img-inner">
+              <div class="project-slideshow slides-7">
+                <img src="assets/nychardcore2021/nychardcore_1.png" alt="NYC Hardcore 2021" />
+                <img src="assets/nychardcore2021/nychardcore_2.png" alt="NYC Hardcore 2021" />
+                <img src="assets/nychardcore2021/nychardcore_3.png" alt="NYC Hardcore 2021" />
+                <img src="assets/nychardcore2021/nychardcore_4.png" alt="NYC Hardcore 2021" />
+                <img src="assets/nychardcore2021/nychardcore_5.png" alt="NYC Hardcore 2021" />
+                <img src="assets/nychardcore2021/nychardcore_6.png" alt="NYC Hardcore 2021" />
+                <img src="assets/nychardcore2021/nychardcore_7.png" alt="NYC Hardcore 2021" />
+              </div>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
           <div class="project-info">
-            <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
-            <h3 class="project-title">Fake Name 1</h3>
-            <p class="project-director">Written and Directed by Salem Rabley</p>
-            <p class="project-logline">[Logline]</p>
+            <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Editor</span></div>
+            <h3 class="project-title">NYC Hardcore 2021</h3>
+            <p class="project-director">Directed and Edited by Salem Rabley</p>
+            <p class="project-logline">A raw portrait of the New York City underground hardcore scene: revealing the intimacy, vulnerability, and community hidden beneath the noise.</p>
           </div>
         </article>
         <article class="project-card project-card--grad-6" style="display:none;">
