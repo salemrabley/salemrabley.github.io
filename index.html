@@ -1707,6 +1707,20 @@
     <p class="footer-copy">&copy; 2024 Salem Rabley. All rights reserved.</p>
   </footer>
 
+  <!-- ── Slideshow Desync ──────────────────────────────────────── -->
+  <script>
+    (function() {
+      var offsets = [0, -7.3, -3.8, -11.1, -5.5, -9.2, -2.6, -14.4];
+      document.querySelectorAll('.project-slideshow').forEach(function(slideshow, i) {
+        var offset = offsets[i % offsets.length];
+        slideshow.querySelectorAll('img').forEach(function(img) {
+          var current = parseFloat(getComputedStyle(img).animationDelay) || 0;
+          img.style.animationDelay = (current + offset) + 's';
+        });
+      });
+    })();
+  </script>
+
   <!-- ── Scroll Reveal Script ────────────────────────────────── -->
   <script>
     (function() {
