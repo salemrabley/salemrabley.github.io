@@ -858,13 +858,12 @@
 
     /* ─── About ────────────────────────────────────────── */
     .about {
-      height: calc(100vh - 76px);
+      min-height: calc(100vh - 76px);
       scroll-margin-top: 76px;
-      padding: 0 80px;
+      padding: 60px 80px;
       background: var(--dark);
       display: flex;
       align-items: center;
-      overflow: hidden;
     }
 
     .about-grid {
@@ -1398,8 +1397,22 @@
                 <span class="work-category-title">Directing</span>
       </div>
       <div class="projects-grid">
-        <article class="project-card project-card--wide project-card--grad-1">
-          <div class="project-img"><div class="project-img-inner"></div><div class="project-overlay"></div></div>
+        <article class="project-card project-card--wide project-card--grad-1" onclick="window.location='mrs-morgan.html'" style="cursor:pointer;">
+          <div class="project-img">
+            <div class="project-img-inner">
+              <div class="project-slideshow slides-8">
+                <img src="assets/mrsmorgan/mrsmorgan_1.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_2.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_3.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_4.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_5.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_6.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_7.png" alt="Mrs. Morgan" />
+                <img src="assets/mrsmorgan/mrsmorgan_8.png" alt="Mrs. Morgan" />
+              </div>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
           <div class="project-info">
             <div class="project-meta"><span class="project-year">2026</span><span class="project-role">Director · Writer</span></div>
             <h3 class="project-title">Mrs. Morgan</h3>
