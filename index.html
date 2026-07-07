@@ -858,8 +858,13 @@
 
     /* ─── About ────────────────────────────────────────── */
     .about {
-      padding: 160px 80px;
+      height: calc(100vh - 76px);
+      scroll-margin-top: 76px;
+      padding: 0 80px;
       background: var(--dark);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
     }
 
     .about-grid {
@@ -867,6 +872,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 120px;
       align-items: start;
+      width: 100%;
     }
 
     .about-left { }
@@ -1219,7 +1225,7 @@
 
       .reel-header { padding: 0 40px; }
       .projects { padding: 100px 40px; }
-      .about { padding: 100px 40px; }
+      .about { padding: 0 40px; }
       .contact { padding: 100px 40px; gap: 60px; }
       footer { padding: 32px 40px; }
 
@@ -1250,7 +1256,7 @@
       .work-category { margin-bottom: 64px; }
       .work-category-header { gap: 12px; }
 
-      .about { padding: 80px 24px; }
+      .about { padding: 0 24px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-right { padding-top: 0; }
       .about-gallery { gap: 6px; }
