@@ -319,6 +319,27 @@
       line-height: 1.4;
     }
 
+    .film-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .film-link-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-dim);
+      transition: color 0.2s;
+    }
+    .film-link-icon:hover { color: var(--white); }
+    .film-link-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
     .red-rule {
       width: 40px;
       height: 1px;
@@ -341,7 +362,7 @@
       font-weight: 300;
       color: var(--white-dim);
       line-height: 1.65;
-      margin-bottom: 60px;
+      margin-bottom: 24px;
     }
 
     /* Stills grid */
@@ -580,6 +601,7 @@
           <p class="film-meta-label">Format</p>
           <p class="film-meta-value">Documentary</p>
         </div>
+
       </aside>
 
       <!-- Right: logline + stills -->
@@ -588,6 +610,16 @@
         <p class="film-synopsis reveal reveal-delay-1">
           A raw portrait of the New York City underground hardcore scene: revealing the intimacy, vulnerability, and community hidden beneath the noise.
         </p>
+
+        <p class="film-synopsis-label reveal" style="margin-top: 0;">Watch Here</p>
+        <div class="film-links reveal reveal-delay-1" style="margin-bottom: 48px;">
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="film-link-icon" title="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Vimeo" class="film-link-icon" title="Vimeo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 12.5C4.603 9.913 3.83 8.617 3 8.617c-.179 0-.806.378-1.881 1.132L0 8.332c1.185-1.044 2.351-2.084 3.501-3.128C5.08 3.772 6.266 3.13 7.055 3.057c1.865-.18 3.013 1.092 3.442 3.815.462 2.912.783 4.722.964 5.435.535 2.426 1.123 3.638 1.767 3.638.498 0 1.247-.787 2.247-2.358 1-1.569 1.528-2.765 1.587-3.588.14-1.356-.395-2.035-1.587-2.035-.565 0-1.148.13-1.747.39 1.161-3.797 3.374-5.641 6.638-5.527 2.42.085 3.562 1.638 3.411 4.584z"/></svg>
+          </a>
+        </div>
 
         <div class="film-stills reveal reveal-delay-2">
           <div class="film-still film-still--wide">
