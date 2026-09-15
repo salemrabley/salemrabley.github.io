@@ -789,6 +789,33 @@
       100%  { opacity: 0; }
     }
 
+    /* 18-image slideshow (54s cycle, 3s per image) */
+    .project-slideshow.slides-18 img:nth-child(1)  { animation: slideFade18 54s 0s infinite; }
+    .project-slideshow.slides-18 img:nth-child(2)  { animation: slideFade18 54s 3s infinite; }
+    .project-slideshow.slides-18 img:nth-child(3)  { animation: slideFade18 54s 6s infinite; }
+    .project-slideshow.slides-18 img:nth-child(4)  { animation: slideFade18 54s 9s infinite; }
+    .project-slideshow.slides-18 img:nth-child(5)  { animation: slideFade18 54s 12s infinite; }
+    .project-slideshow.slides-18 img:nth-child(6)  { animation: slideFade18 54s 15s infinite; }
+    .project-slideshow.slides-18 img:nth-child(7)  { animation: slideFade18 54s 18s infinite; }
+    .project-slideshow.slides-18 img:nth-child(8)  { animation: slideFade18 54s 21s infinite; }
+    .project-slideshow.slides-18 img:nth-child(9)  { animation: slideFade18 54s 24s infinite; }
+    .project-slideshow.slides-18 img:nth-child(10) { animation: slideFade18 54s 27s infinite; }
+    .project-slideshow.slides-18 img:nth-child(11) { animation: slideFade18 54s 30s infinite; }
+    .project-slideshow.slides-18 img:nth-child(12) { animation: slideFade18 54s 33s infinite; }
+    .project-slideshow.slides-18 img:nth-child(13) { animation: slideFade18 54s 36s infinite; }
+    .project-slideshow.slides-18 img:nth-child(14) { animation: slideFade18 54s 39s infinite; }
+    .project-slideshow.slides-18 img:nth-child(15) { animation: slideFade18 54s 42s infinite; }
+    .project-slideshow.slides-18 img:nth-child(16) { animation: slideFade18 54s 45s infinite; }
+    .project-slideshow.slides-18 img:nth-child(17) { animation: slideFade18 54s 48s infinite; }
+    .project-slideshow.slides-18 img:nth-child(18) { animation: slideFade18 54s 51s infinite; }
+    @keyframes slideFade18 {
+      0%    { opacity: 0; }
+      2.2%  { opacity: 1; }
+      5.56% { opacity: 1; }
+      7.76% { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+
     .project-card:hover .project-img-inner { transform: scale(1.04); }
 
     .project-overlay {
@@ -1667,6 +1694,39 @@
             <h3 class="project-title">Strangers On Vacation</h3>
             <p class="project-director">Directed by Annabella Kokoyachuk</p>
             <p class="project-logline">When a girl goes on a vacation with her friends after their first year away from each other and things don’t go according to plan, she’s forced to ask herself what’s most important: her friends, or herself.</p>
+          </div>
+        </article>
+        <article class="project-card project-card--grad-3" style="cursor:pointer;" onclick="window.location='following.html'">
+          <div class="project-img">
+            <div class="project-img-inner">
+              <div class="project-slideshow slides-18">
+                <img src="assets/following/following_1.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_2.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_3.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_4.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_5.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_6.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_7.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_8.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_9.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_10.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_11.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_12.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_13.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_14.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_15.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_16.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_17.jpg" alt="Following" loading="lazy" decoding="async" />
+                <img src="assets/following/following_18.jpg" alt="Following" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span class="project-year">2025</span><span class="project-role">Art Director</span></div>
+            <h3 class="project-title">Following</h3>
+            <p class="project-director">Directed by Amanda Acosta</p>
+            <p class="project-logline">Desperate to stay relevant online, a fitness influencer pushes her diet and workout regimen to extremes, only to discover that her younger sister is following in her footsteps.</p>
           </div>
         </article>
       </div>
